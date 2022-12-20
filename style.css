@@ -12,6 +12,24 @@
   cursor: pointer;
 }
 
+#todo-list__item {
+  background-color: #f4f6f7;
+}
+
 .bold {
   font-weight: bold;
+}
+
+#todo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.todo-list__active-item p {
+  text-decoration: line-through;
+}
+
+.todo-list__hide-item {
+  display: none !important;
 }
