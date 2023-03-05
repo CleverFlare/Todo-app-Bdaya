@@ -33,3 +33,7 @@
 .todo-list__hide-item {
   display: none !important;
 }
+
+.form-check-input {
+  pointer-events: none;
+}

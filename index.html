@@ -9,7 +9,9 @@
     <script src="dist/js/bootstrap.bundle.min.js"></script>
 
     <link rel="stylesheet" href="style.css" />
-    <script defer src="index.js"></script>
+    <script src="utility.js" defer></script>
+    <script src="js/create-todo.js" defer></script>
+    <script src="js/check-todo.js" defer></script>
   </head>
   <body>
     <section class="vh-100 gradient-custom">
@@ -19,6 +21,7 @@
             <div class="card">
               <div class="card-body p-5">
                 <form
+                  data-id="form"
                   class="d-flex justify-content-center align-items-end mb-4"
                 >
                   <div class="form-outline flex-fill">
@@ -28,20 +31,17 @@
                     <input
                       type="text"
                       id="form2"
+                      data-id="input"
                       class="form-control todo-creator__input"
                       placeholder="type your taks here..."
                     />
                   </div>
-                  <button
-                    type="submit"
-                    class="btn btn-info ms-2 todo-creator__submit-button"
-                  >
-                    Add
-                  </button>
+                  <button type="submit" class="btn btn-info ms-2">Add</button>
                 </form>
 
                 <!-- Tabs navs -->
-                <ul
+                <!-- <ul
+                  data-id="tablist"
                   class="nav nav-tabs mb-4 pb-2 todo-tabs"
                   id="ex1"
                   role="tablist"
@@ -55,6 +55,8 @@
                       role="tab"
                       aria-controls="ex1-tabs-1"
                       aria-selected="true"
+                      data-id="tab"
+                      data-hide=""
                       >All</a
                     >
                   </li>
@@ -67,6 +69,8 @@
                       role="tab"
                       aria-controls="ex1-tabs-2"
                       aria-selected="false"
+                      data-id="tab"
+                      data-hide="todo-list__active-item"
                       >Active</a
                     >
                   </li>
@@ -79,10 +83,12 @@
                       role="tab"
                       aria-controls="ex1-tabs-3"
                       aria-selected="false"
+                      data-id="tab"
+                      data-show="todo-list__active-item"
                       >Completed</a
                     >
                   </li>
-                </ul>
+                </ul> -->
                 <!-- Tabs navs -->
 
                 <!-- Tabs content -->
@@ -92,7 +98,7 @@
                   role="tabpanel"
                   aria-labelledby="ex1-tab-1"
                 >
-                  <ul class="list-group mb-0" id="todo-list">
+                  <ul class="list-group mb-0" id="todo-list" data-id="todolist">
                     <!-- <li
                       class="list-group-item d-flex align-items-center border-0 rounded"
                       id="todo-list__item"
@@ -100,8 +106,6 @@
                       <input
                         class="form-check-input me-2"
                         type="checkbox"
-                        value=""
-                        aria-label="..."
                       />
                       <p class="mb-0">Cras justo odio</p>
                       <div class="flex-fill d-flex justify-content-md-end">
